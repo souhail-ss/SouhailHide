@@ -6,8 +6,8 @@ import twitter from '../../assets/twitter.png';
 import linkedin from '../../assets/linkedin.png';
 
 // Styled Components
-const FooterWrapper = styled.div`
-  background-color: #eaf7ff;
+export const FooterWrapper = styled.div`
+  background-color: #ffffff;
   width: 100%;
   bottom: 0;
   left: 0;
