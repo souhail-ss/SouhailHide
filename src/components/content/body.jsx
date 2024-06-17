@@ -9,8 +9,10 @@ import { FaFileImport } from "react-icons/fa6";
 import {
   AdditionalText,
   AnotherRow,
+  Biggertext,
   BodyContainer,
   BodyImage,
+  IconContainer,
   ImportIcon,
   InnerCard,
   InnerCardWrapper,
@@ -21,8 +23,11 @@ import {
   SearchDiv,
   SearchTitle,
   SettIcon,
+  Smalltext,
   Stackpics,
   StyledCard,
+  StyledIcon,
+  StyledImage,
   StyledRow,
   TextContainer,
   TextStyled,
@@ -37,42 +42,8 @@ import Pic from "../../assets/sukunaHalal.jpg";
 import Pic2 from "../../assets/mashle.jpeg";
 import Pic3 from "../../assets/kimetsu.jpeg";
 import numPic from "../../assets/NumPicture.png";
-import RdvUsers from "../props.jsx";
+import RdvUsers from "../RdvBar.jsx";
 import ToggleSwitch from "../Buttons/SwitchButton.jsx";
-
-const StyledImage = styled.div`
-  height: 200px;
-  width: 100%;
-  background: linear-gradient(to top, #e4e4e4, rgba(255, 255, 255, 0)),
-    url("https://static.vecteezy.com/system/resources/previews/006/240/302/non_2x/abstract-soft-focus-sunset-field-landscape-of-yellow-flowers-and-grass-meadow-warm-golden-hour-sunset-sunrise-time-tranquil-spring-summer-nature-closeup-and-blurred-forest-background-idyllic-nature-photo.jpg")
-      no-repeat center/cover;
-  z-index: 3;
-  opacity: 1;
-  margin-bottom: 20px;
-`;
-const Biggertext = styled.h1`
-  font-family: "Roboto",Arial, Helvetica, sans-serif;
-  font-size: 50px;
-
-  font-weight: 700;
-`;
-const Smalltext = styled.h6`
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 15px;
-`;
-const IconContainer = styled.div`
-  display: grid;
-  place-items: center;
-  margin-bottom: 60px;
-  width: 50px; /* Adjust based on your icon size */
-  height: 50px; /* Adjust based on your icon size */
-`;
-const StyledIcon = styled.div`
-  /* font-size: 50px;  */
-  position: absolute;
-
-  //Make sure icons overlap Adjust based on your preference /* Adjust based on your preference */
-`;
 
 function Body() {
   return (
@@ -106,7 +77,9 @@ function Body() {
 
                 <Row>
                   <Col lg={{ span: 6, offset: 7 }} xs={{ span: 5, offset: 5 }}>
-                    <SearchButton>Lancer la Recherche</SearchButton>
+                    <SearchButton>
+                      Lancer la Recherche
+                      </SearchButton>
                   </Col>
                 </Row>
               </Row>
@@ -219,136 +192,23 @@ function Body() {
 
               <Row>
                 <Col lg={{ span: 6, offset: 0 }} xs={12}>
-                  <h6 style={{ color: "#a4aab2" }}>Cette semaine:13-17mai</h6>
-                  <RdvBar
-                  // className="w-100"
-                  >
-                    <Row>
-                      <Col xs={{ span: 2, offset: 0 }}>
-                        <RdvPic src={Pic} />
-                      </Col>
-                      <Col>
-                        <UsernameContainer>
-                          <Username>
-                            <RdvUsers name="Souhail Sukuna" />
-                          </Username>
-                          <AdditionalText>Paris ,France</AdditionalText>
-                        </UsernameContainer>
-                      </Col>
-                      <TimeBar>
-                        13/05/24
-                        <br />
-                        <a style={{ fontSize: "15px" }}>10h00-11h00</a>
-                      </TimeBar>
-                    </Row>
-                  </RdvBar>
-                  <RdvBar
-                  // className="w-100"
-                  >
-                    <Row>
-                      <Col xxs xs={2}>
-                        <RdvPic src={Pic3} />
-                      </Col>
-                      <Col>
-                        <UsernameContainer>
-                          <Username>
-                            <RdvUsers name="Yasser gouchia" />
-                          </Username>
-                          <AdditionalText>Paris ,France</AdditionalText>
-                        </UsernameContainer>
-                      </Col>
-                      <TimeBar>
-                        13/05/24
-                        <br />
-                        <a style={{ fontSize: "15px" }}>10h00-11h00</a>
-                      </TimeBar>
-                    </Row>
-                  </RdvBar>
-                  <RdvBar
-                  // className="w-100"
-                  >
-                    <Row>
-                      <Col xs={2}>
-                        <RdvPic src={Pic2} />
-                      </Col>
-                      <Col>
-                        <UsernameContainer>
-                          <Username>
-                            <RdvUsers name="Mashle" />
-                          </Username>
-                          <AdditionalText>Paris ,France</AdditionalText>
-                        </UsernameContainer>
-                      </Col>
-                      <TimeBar>
-                        13/05/24
-                        <br />
-                        <a style={{ fontSize: "15px" }}>10h00-11h00</a>
-                      </TimeBar>
-                    </Row>
-                  </RdvBar>
+                  <Smalltext style={{ color: "#a0b0c9" }}>
+                    La semaine prochaine:13-17mai
+                  </Smalltext>
+
+                  <RdvUsers name="Yasser gouchia" location={"Paris , France"} />
+
+                  <RdvUsers name="Souhail Zrag" location={"Paris , France"} />
+                  <RdvUsers name="Sukuna Who" location={"Paris , France"} />
                 </Col>
                 <Col lg={{ span: 6, offset: 0 }} xs={12}>
-                  <h6 style={{ color: "#a4aab2" }}>
+                  <Smalltext style={{ color: "#a0b0c9" }}>
                     La semaine prochaine:13-17mai
-                  </h6>
-                  <RdvBar
-                  // className="w-100"
-                  >
-                    <Row>
-                      <Col xs={2}>
-                        <RdvPic src={Pic2} />
-                      </Col>
-                      <Col>
-                        <UsernameContainer>
-                          <Username>John Doe</Username>
-                          <AdditionalText>Paris ,France</AdditionalText>
-                        </UsernameContainer>
-                      </Col>
-                      <TimeBar>
-                        13/05/24
-                        <br />
-                        <a style={{ fontSize: "15px" }}>10h00-11h00</a>
-                      </TimeBar>
-                    </Row>
-                  </RdvBar>
-                  <RdvBar
-                  // className="w-100"
-                  >
-                    <Row>
-                      <Col xs={2}>
-                        <RdvPic src={Pic2} />
-                      </Col>
-                      <Col>
-                        <UsernameContainer>
-                          <Username>Jane Smith</Username>
-                          <AdditionalText>Paris ,France</AdditionalText>
-                        </UsernameContainer>
-                      </Col>
-                      <TimeBar>
-                        13/05/24
-                        <br />
-                        <a style={{ fontSize: "15px" }}>10h00-11h00</a>
-                      </TimeBar>
-                    </Row>
-                  </RdvBar>
-                  <RdvBar className="w-100">
-                    <Row>
-                      <Col xs={2}>
-                        <RdvPic src={Pic3} />
-                      </Col>
-                      <Col>
-                        <UsernameContainer>
-                          <Username>Sam Wilson</Username>
-                          <AdditionalText>Paris ,France</AdditionalText>
-                        </UsernameContainer>
-                      </Col>
-                      <TimeBar>
-                        13/05/24
-                        <br />
-                        <a style={{ fontSize: "15px" }}>10h00-11h00</a>
-                      </TimeBar>
-                    </Row>
-                  </RdvBar>
+                  </Smalltext>
+
+                  <RdvUsers name="John Halal" location={"Paris , France"} />
+                  <RdvUsers name="Fun fun" location={"Paris , France"} />
+                  <RdvUsers name="Skuuu skuu" location={"Paris , France"} />
                 </Col>
               </Row>
             </RdvCard>
@@ -356,7 +216,7 @@ function Body() {
 
           <Col lg={{ span: 4, offset: 0 }} xs={{ span: 12, offset: 0 }}>
             <StyledCard>
-              <ImportIcon>
+              <ImportIcon style={{border: "none"}}>
                 <StyledIcon>
                   <FaCircle
                     style={{

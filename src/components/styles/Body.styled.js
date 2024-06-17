@@ -67,14 +67,14 @@ export const SearchButton = styled.button`
   padding: 0 40px 0;
   border: none;
   border-radius: 40px;
-  font-size: 15px;
+  font-size: 18px;
   height: 50px;
   margin-right: 15px;
   margin-bottom: 40px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
+  
   cursor: pointer;
   transition: background-color 0.3s, transform 0.3s;
   display: flex;
@@ -227,6 +227,7 @@ export const UsernameContainer = styled.div`
 `;
 
 export const Username = styled.span`
+margin-top: 5px;
   font-size: 16px;
   font-weight: bold;
 `;
@@ -241,4 +242,38 @@ export const RdvPic = styled.img`
   border-radius: 50%;
   object-fit: cover;
   /* margin-right: -20px; */
+`;
+export const StyledImage = styled.div`
+  height: 200px;
+  width: 100%;
+  background: linear-gradient(to top, #e4e4e4, rgba(255, 255, 255, 0)),
+    url("https://static.vecteezy.com/system/resources/previews/006/240/302/non_2x/abstract-soft-focus-sunset-field-landscape-of-yellow-flowers-and-grass-meadow-warm-golden-hour-sunset-sunrise-time-tranquil-spring-summer-nature-closeup-and-blurred-forest-background-idyllic-nature-photo.jpg")
+      no-repeat center/cover;
+  z-index: 3;
+  opacity: 1;
+  margin-bottom: 20px;
+`;
+export const Biggertext = styled.h1`
+font-family: "Roboto", Arial, Helvetica, sans-serif;
+font-size: 50px;
+
+font-weight: 700;
+`;
+export const Smalltext = styled.h6`
+font-family: Arial, Helvetica, sans-serif;
+font-size: 16px;
+`;
+
+export const IconContainer = styled.div`
+  display: grid;
+  place-items: center;
+  margin-bottom: 60px;
+  width: 50px; /* Adjust based on your icon size */
+  height: 50px; /* Adjust based on your icon size */
+`;
+export const StyledIcon = styled.div`
+  /* font-size: 50px;  */
+  position: absolute;
+
+  //Make sure icons overlap Adjust based on your preference /* Adjust based on your preference */
 `;
