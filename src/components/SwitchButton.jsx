@@ -1,5 +1,5 @@
 import React from 'react'
-import { Checkbox, Container, Inner, Label, Switch, ToggleSwitchWrapper } from '../styles/SwiTchButton.styled'
+import { Checkbox, Container, Inner, Label, Switch, ToggleSwitchWrapper } from '../Containers/styles/SwiTchButton.styled'
 
 const ToggleSwitch = ({label}) => {
   return (

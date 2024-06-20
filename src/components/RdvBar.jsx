@@ -7,7 +7,7 @@ import {
   TimeBar,
   Username,
   UsernameContainer,
-} from "./styles/Body.styled";
+} from "../Containers/styles/Body.styled"
 import Pic from "../assets/sukunaHalal.jpg";
 import { Col, Row } from "react-bootstrap";
 function UserNames({ Picture, name, location }) {

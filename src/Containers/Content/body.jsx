@@ -36,14 +36,15 @@ import {
   Username,
   UsernameContainer,
   UserPic,
-} from "../styles/Body.styled";
+} from "../styles/Body.styled.js";
 import { FaCircle, FaStar, FaUserFriends } from "react-icons/fa";
 import Pic from "../../assets/sukunaHalal.jpg";
-import Pic2 from "../../assets/mashle.jpeg";
-import Pic3 from "../../assets/kimetsu.jpeg";
+// import Pic2 from "../../assets/mashle.jpeg";
+// import Pic3 from "../../assets/kimetsu.jpeg";
 import numPic from "../../assets/NumPicture.png";
-import RdvUsers from "../RdvBar.jsx";
-import ToggleSwitch from "../Buttons/SwitchButton.jsx";
+import RdvUsers from "../../components/RdvBar.jsx";
+import CardResults from "../../components/CardResults.jsx";
+// import ToggleSwitch from "../../components/SwitchButton.jsx";
 
 function Body() {
   return (
@@ -77,9 +78,7 @@ function Body() {
 
                 <Row>
                   <Col lg={{ span: 6, offset: 7 }} xs={{ span: 5, offset: 5 }}>
-                    <SearchButton>
-                      Lancer la Recherche
-                      </SearchButton>
+                    <SearchButton>Lancer la Recherche</SearchButton>
                   </Col>
                 </Row>
               </Row>
@@ -89,11 +88,7 @@ function Body() {
 
         <StyledRow>
           <Col md={4}>
-            <StyledCard>
-              {/* <HiOutlineChatBubbleOvalLeftEllipsis style={{color:'#ff0000'}} >
-            <FaCircle style={{color:'#474fff'}}/>
-                
-            </HiOutlineChatBubbleOvalLeftEllipsis> */}
+            {/* <StyledCard>
               <IconContainer>
                 <StyledIcon>
                   <FaCircle style={{ color: "#474fff", fontSize: "70px" }} />
@@ -114,68 +109,29 @@ function Body() {
                 <UserPic src={Pic}></UserPic>
                 <UserPic src={Pic}></UserPic>
                 <UserPic src={Pic}></UserPic>
-                <UserPic src={numPic}></UserPic>
+                <UserPic src={numPic}></UserPic> 
               </Stackpics>
-            </StyledCard>
+            </StyledCard> */}
+            <CardResults />
           </Col>
 
           <Col md={4}>
-            <StyledCard>
-              {/* <HiOutlineChatBubbleOvalLeftEllipsis style={{color:'#ff0000'}} >
-            <FaCircle style={{color:'#474fff'}}/>
-                
-            </HiOutlineChatBubbleOvalLeftEllipsis> */}
-              <IconContainer>
+            <CardResults>
+              {/* <IconContainer>
                 <StyledIcon>
-                  <FaCircle style={{ color: "#474fff", fontSize: "60px" }} />
+                  <FaCircle style={{ color: "#474fff", fontSize: "70px" }} />
                 </StyledIcon>
                 <StyledIcon>
-                  <TiStarburst style={{ color: "#ffffff", fontSize: "40px" }} />
-                </StyledIcon>
-              </IconContainer>
-
-              <h3>Resultat des entretiens</h3>
-              <Smalltext style={{ color: "#a0b0c9" }}>
-                Status des candidats apres entretien
-              </Smalltext>
-
-              <Stackpics direction="horizontal">
-                <UserPic src={Pic2}></UserPic>
-                <UserPic src={Pic2}></UserPic>
-                <UserPic src={Pic2}></UserPic>
-                <UserPic src={numPic}></UserPic>
-              </Stackpics>
-            </StyledCard>
-          </Col>
-          <Col md={4}>
-            <StyledCard>
-              {/* <HiOutlineChatBubbleOvalLeftEllipsis style={{color:'#ff0000'}} >
-            <FaCircle style={{color:'#474fff'}}/>
-                
-            </HiOutlineChatBubbleOvalLeftEllipsis> */}
-              <IconContainer>
-                <StyledIcon>
-                  <FaCircle style={{ color: "#474fff", fontSize: "60px" }} />
-                </StyledIcon>
-                <StyledIcon>
-                  <FaUserFriends
-                    style={{ color: "#ffffff", fontSize: "30px" }}
+                  <HiOutlineChatBubbleOvalLeftEllipsis
+                    style={{ color: "#ffffff", fontSize: "40px" }}
                   />
                 </StyledIcon>
-              </IconContainer>
+              </IconContainer> */}
+            </CardResults>
+          </Col>
 
-              <h3>Resultat des entretiens</h3>
-              <Smalltext style={{ color: "#a0b0c9" }}>
-                Status des candidats apres entretien
-              </Smalltext>
-
-              <Stackpics direction="horizontal">
-                <UserPic src={Pic3}></UserPic>
-                <UserPic src={Pic3}></UserPic>
-                <UserPic src={Pic3}></UserPic>
-                <UserPic src={numPic}></UserPic>
-              </Stackpics>
-            </StyledCard>
+          <Col md={4}>
+            <CardResults />
           </Col>
         </StyledRow>
         {/* second Row */}
@@ -216,7 +172,7 @@ function Body() {
 
           <Col lg={{ span: 4, offset: 0 }} xs={{ span: 12, offset: 0 }}>
             <StyledCard>
-              <ImportIcon style={{border: "none"}}>
+              <ImportIcon style={{ border: "none" }}>
                 <StyledIcon>
                   <FaCircle
                     style={{

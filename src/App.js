@@ -1,19 +1,18 @@
 import React from "react";
-import Navbar from "./components/Nav/Navbar";
-import Footer from "./components/Footer/Footer";
-import Body from "./components/content/body";
-import { Col, Container, Row } from "react-bootstrap";
+
+import Navbar from "./Containers/Nav/Navbar";
+import Footer from "./Containers/Footer/Footer";
+import Body from './Containers/Content/body';
+
+
 
 const App = () => {
   return (
     <>
-   
-       <Navbar />
+      <Navbar />
       <Body />
       <Footer />
-      
     </>
-
   );
 };
 
