@@ -1,11 +1,9 @@
-import React from "react";
-import styled from "styled-components";
+import React, { useEffect, useState } from "react";
 import { Card, Col, Container, Row, Stack } from "react-bootstrap";
 import { HiOutlineChatBubbleOvalLeftEllipsis } from "react-icons/hi2";
 import { TiStarburst } from "react-icons/ti";
 import { MdSettings } from "react-icons/md";
 import { FaFileImport } from "react-icons/fa6";
-
 import {
   AdditionalText,
   AnotherRow,
@@ -47,6 +45,30 @@ import CardResults from "../../components/CardResults.jsx";
 // import ToggleSwitch from "../../components/SwitchButton.jsx";
 
 function Body() {
+  const [data, setData] = useState([]);
+
+  const getData = () => {
+    fetch("data.json", {
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((myjson) => setData(myjson))
+      .catch((error) => console.error("Error fetching data:", error));
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  const renderRdvUsers = (users) => {
+    return users.map((user) => (
+      <RdvUsers key={user.id} name={user.username} location={user.location} />
+    ));
+  };
+
   return (
     <BodyContainer>
       <StyledImage>
@@ -88,7 +110,7 @@ function Body() {
 
         <StyledRow>
           <Col md={4}>
-            {/* <StyledCard>
+            <StyledCard>
               <IconContainer>
                 <StyledIcon>
                   <FaCircle style={{ color: "#474fff", fontSize: "70px" }} />
@@ -100,38 +122,49 @@ function Body() {
                 </StyledIcon>
               </IconContainer>
 
-              <h3>Resultat des entretiens</h3>
-              <Smalltext style={{ color: "#a0b0c9" }}>
-                Status des candidats apres entretien
-              </Smalltext>
-
-              <Stackpics direction="horizontal">
-                <UserPic src={Pic}></UserPic>
-                <UserPic src={Pic}></UserPic>
-                <UserPic src={Pic}></UserPic>
-                <UserPic src={numPic}></UserPic> 
-              </Stackpics>
-            </StyledCard> */}
-            <CardResults />
+              <CardResults
+                cardDetails={"Resultat des entretiens"}
+                status={"Status des candidats apres entretien"}
+              />
+            </StyledCard>
           </Col>
 
           <Col md={4}>
-            <CardResults>
-              {/* <IconContainer>
+            <StyledCard>
+              <IconContainer>
                 <StyledIcon>
                   <FaCircle style={{ color: "#474fff", fontSize: "70px" }} />
                 </StyledIcon>
                 <StyledIcon>
-                  <HiOutlineChatBubbleOvalLeftEllipsis
-                    style={{ color: "#ffffff", fontSize: "40px" }}
-                  />
+                  <TiStarburst style={{ color: "#ffffff", fontSize: "40px" }} />
                 </StyledIcon>
-              </IconContainer> */}
-            </CardResults>
+              </IconContainer>
+
+              <CardResults
+                cardDetails={"Resultat des entretiens"}
+                status={"Status des candidats apres entretien"}
+              />
+            </StyledCard>
           </Col>
 
           <Col md={4}>
-            <CardResults />
+            <StyledCard>
+              <IconContainer>
+                <StyledIcon>
+                  <FaCircle style={{ color: "#474fff", fontSize: "70px" }} />
+                </StyledIcon>
+                <StyledIcon>
+                  <FaUserFriends
+                    style={{ color: "#ffffff", fontSize: "40px" }}
+                  />
+                </StyledIcon>
+              </IconContainer>
+
+              <CardResults
+                cardDetails={"Resultat des entretiens"}
+                status={"Status des candidats apres entretien"}
+              />
+            </StyledCard>
           </Col>
         </StyledRow>
         {/* second Row */}
@@ -145,27 +178,36 @@ function Body() {
                 </Col>
               </Row>
               {/* Second Row */}
-
               <Row>
-                <Col lg={{ span: 6, offset: 0 }} xs={12}>
-                  <Smalltext style={{ color: "#a0b0c9" }}>
-                    La semaine prochaine:13-17mai
-                  </Smalltext>
-
-                  <RdvUsers name="Yasser gouchia" location={"Paris , France"} />
-
-                  <RdvUsers name="Souhail Zrag" location={"Paris , France"} />
-                  <RdvUsers name="Sukuna Who" location={"Paris , France"} />
-                </Col>
-                <Col lg={{ span: 6, offset: 0 }} xs={12}>
-                  <Smalltext style={{ color: "#a0b0c9" }}>
-                    La semaine prochaine:13-17mai
-                  </Smalltext>
-
-                  <RdvUsers name="John Halal" location={"Paris , France"} />
-                  <RdvUsers name="Fun fun" location={"Paris , France"} />
-                  <RdvUsers name="Skuuu skuu" location={"Paris , France"} />
-                </Col>
+                {data.length > 0 && data[0]["Cette semaine"] && (
+                  <Col lg={{ span: 6, offset: 0 }} xs={12}>
+                    <Smalltext style={{ color: "#a0b0c9" }}>
+                      Cette Semaine: 13-17 mai
+                    </Smalltext>
+                    {data[0]["Cette semaine"].map((user) => (
+                      <RdvUsers
+                        key={user.id}
+                        name={user.username}
+                        location={user.location}
+                      />
+                    ))}
+                  </Col>
+                )}
+                {data.length > 0 && data[1]["la semaine prochaine"] && (
+                  <Col lg={{ span: 6, offset: 0 }} xs={12}>
+                    <Smalltext style={{ color: "#a0b0c9" }}>
+                      La semaine prochaine: 20-24 mai
+                    </Smalltext>
+                    {/* {renderRdvUsers(data[1]["la semaine prochaine"])} */}
+                    {data[0]["Cette semaine"].map((user) => (
+                      <RdvUsers
+                        key={user.id}
+                        name={user.username}
+                        location={user.location}
+                      />
+                    ))}
+                  </Col>
+                )}
               </Row>
             </RdvCard>
           </Col>

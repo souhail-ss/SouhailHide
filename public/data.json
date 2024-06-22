@@ -1,0 +1,40 @@
+[
+  {
+    "Cette semaine": [
+      {
+        "id": 1,
+        "username": "Sukuna Halal",
+        "location": "Paris, France"
+      },
+      {
+        "id": 2,
+        "username": "Yasser Gouchia",
+        "location": "Paris, France"
+      },
+      {
+        "id": 3,
+        "username": "Souhail limniya",
+        "location": "Paris, Lyon"
+      }
+    ]
+  },
+  {
+    "la semaine prochaine": [
+      {
+        "id": 1,
+        "username": "Souhail Zrag",
+        "location": "Paris, France"
+      },
+      {
+        "id": 2,
+        "username": "Souhail Zrage",
+        "location": "Paris, France"
+      },
+      {
+        "id": 3,
+        "username": "Souhail Zraaaag",
+        "location": "Paris, France"
+      }
+    ]
+  }
+]

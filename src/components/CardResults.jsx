@@ -18,43 +18,21 @@ import Pic3 from "../assets/mashle.jpeg";
 // import NumPic from "../assets/mashle.jpeg";
 import PicNum from"../assets/NumPicture.png";
 
-const CardResults = (Logo) => {
+const CardResults = ({cardDetails,status}) => {
   return (
     <>
-      <StyledCard>
-        <IconContainer>
+      
+          
             
-          <StyledIcon>
-            <FaCircle style={{ color: "#474fff", fontSize: "60px" }} />
-          </StyledIcon>
-          <StyledIcon>
-            <TiStarburst style={{ color: "#ffffff", fontSize: "40px" }} />
-          </StyledIcon>
-          {/* <IconContainer>
-                <StyledIcon>
-                  <FaCircle style={{ color: "#474fff", fontSize: "60px" }} />
-                </StyledIcon>
-                <StyledIcon>
-                  <TiStarburst style={{ color: "#ffffff", fontSize: "40px" }} />
-                </StyledIcon>
+            
+         
+         
+        <h3>{cardDetails}</h3>
+              <Smalltext style={{ color: "#a0b0c9" }}>
+                {status}
+              </Smalltext>
 
-              </IconContainer> */}
-              {/* <IconContainer>
-                <StyledIcon>
-                  <FaCircle style={{ color: "#474fff", fontSize: "70px" }} />
-                </StyledIcon>
-                <StyledIcon>
-                  <HiOutlineChatBubbleOvalLeftEllipsis
-                    style={{ color: "#ffffff", fontSize: "40px" }}
-                  />
-                </StyledIcon>
-              </IconContainer> */}
-        </IconContainer>
-
-        <h3>Resultat des entretiens</h3>
-        <Smalltext style={{ color: "#a0b0c9" }}>
-          Status des candidats apres entretien
-        </Smalltext>
+    
 
         <Stackpics direction="horizontal">
           <UserPic src={Pic}></UserPic>
@@ -62,7 +40,7 @@ const CardResults = (Logo) => {
           <UserPic src={Pic3}></UserPic>
           <UserPic src={PicNum}></UserPic>
         </Stackpics>
-      </StyledCard>
+
     </>
   );
 };
