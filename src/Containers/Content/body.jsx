@@ -184,13 +184,7 @@ function Body() {
                     <Smalltext style={{ color: "#a0b0c9" }}>
                       Cette Semaine: 13-17 mai
                     </Smalltext>
-                    {data[0]["Cette semaine"].map((user) => (
-                      <RdvUsers
-                        key={user.id}
-                        name={user.username}
-                        location={user.location}
-                      />
-                    ))}
+                    {renderRdvUsers(data[0]["Cette semaine"])}
                   </Col>
                 )}
                 {data.length > 0 && data[1]["la semaine prochaine"] && (
@@ -198,14 +192,7 @@ function Body() {
                     <Smalltext style={{ color: "#a0b0c9" }}>
                       La semaine prochaine: 20-24 mai
                     </Smalltext>
-                    {/* {renderRdvUsers(data[1]["la semaine prochaine"])} */}
-                    {data[0]["Cette semaine"].map((user) => (
-                      <RdvUsers
-                        key={user.id}
-                        name={user.username}
-                        location={user.location}
-                      />
-                    ))}
+                    {renderRdvUsers(data[1]["la semaine prochaine"])}
                   </Col>
                 )}
               </Row>
